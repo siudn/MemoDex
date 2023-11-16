@@ -16,7 +16,7 @@ function Display() {
     }
   }
 
-  const cards = IDs.map((x) => <Card name={x}></Card>);
+  const cards = IDs.map((x) => <Card key={x} name={x}></Card>);
 
   return <>{cards}</>;
 }

@@ -1,26 +1,39 @@
 import { useState, useEffect } from "react";
 
 function Card({ name }) {
-  const [pokemon, setPokemon] = useState([]);
+  const [pokemon, setPokemon] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
   async function getData(pokeName) {
-    const response = await fetch(
-      `https://pokeapi.co/api/v2/pokemon/${pokeName}`,
-      { mode: "cors" }
-    );
-    const pokeData = await response.json();
-    setPokemon(pokeData);
-    console.log(pokeData);
+    try {
+      const response = await fetch(
+        `https://pokeapi.co/api/v2/pokemon/${pokeName}`,
+        { mode: "cors" }
+      );
+      const pokeData = await response.json();
+      setPokemon(pokeData);
+      console.log(pokeData);
+    } catch (error) {
+      console.error("Error fetching Pokemon data:", error);
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   useEffect(() => {
     getData(name);
-  }, []);
+  }, [name]);
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <div>
       <h1>{pokemon.name}</h1>
-      <img src={pokemon.sprites.front_default} />
+      {pokemon.sprites.front_default && (
+        <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+      )}
     </div>
   );
 }
