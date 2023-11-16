@@ -1,8 +1,6 @@
 import Card from "./Card";
 
-function Display() {
-  const IDs = [];
-
+function Display({ clickHandle, IDs, cards }) {
   function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -16,7 +14,9 @@ function Display() {
     }
   }
 
-  const cards = IDs.map((x) => <Card key={x} name={x}></Card>);
+  cards = IDs.map((x) => (
+    <Card key={x} name={x} handleClick={clickHandle}></Card>
+  ));
 
   return <>{cards}</>;
 }

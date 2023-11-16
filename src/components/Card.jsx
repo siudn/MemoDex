@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function Card({ name }) {
+function Card({ name, handleClick }) {
   const [pokemon, setPokemon] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
@@ -12,7 +12,6 @@ function Card({ name }) {
       );
       const pokeData = await response.json();
       setPokemon(pokeData);
-      console.log(pokeData);
     } catch (error) {
       console.error("Error fetching Pokemon data:", error);
     } finally {
@@ -29,7 +28,7 @@ function Card({ name }) {
   }
 
   return (
-    <div>
+    <div onClick={handleClick}>
       <h1>{pokemon.name}</h1>
       {pokemon.sprites.front_default && (
         <img src={pokemon.sprites.front_default} alt={pokemon.name} />
