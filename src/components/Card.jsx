@@ -10,7 +10,7 @@ function Card({ name }) {
     );
     const pokeData = await response.json();
     setPokemon(pokeData);
-    console.log(pokemon);
+    console.log(pokeData);
   }
 
   useEffect(() => {
