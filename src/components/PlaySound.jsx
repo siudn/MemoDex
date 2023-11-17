@@ -12,14 +12,14 @@ function PlaySound() {
   return (
     <>
       <ReactHowler src={ecruteak} volume={0.5} loop playing={playing} />
-      <button
+      <img
         onClick={() => {
           const play = !playing;
           setPlaying(play);
         }}
-      >
-        <img src={imgName}></img>
-      </button>
+        src={imgName}
+        className="h-auto w-16 bg-white bg-opacity-40 rounded-xl p-2 cursor-pointer absolute bottom-4 left-4"
+      ></img>
     </>
   );
 }
