@@ -28,10 +28,17 @@ function Card({ name, handleClick }) {
   }
 
   return (
-    <div onClick={handleClick}>
-      <h1>{pokemon.name}</h1>
+    <div
+      onClick={handleClick}
+      className="cursor-pointer flex flex-col content-center justify-items-center bg-slate-400 rounded-2xl"
+    >
+      <p>{pokemon.name}</p>
       {pokemon.sprites.front_default && (
-        <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+        <img
+          src={pokemon.sprites.front_default}
+          alt={pokemon.name}
+          className="flex items-center justify-center"
+        />
       )}
     </div>
   );
