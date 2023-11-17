@@ -42,11 +42,9 @@ function App() {
   const clickHandler = (e) => {
     console.log("clicked!");
     clickedCards.push(e.target);
-    const newArr = shuffle(pokeArr);
+    const shuffledIDs = [...pokeArr];
+    const newArr = shuffle(shuffledIDs);
     setPokeArr(newArr);
-    console.log(pokeArr);
-    console.log("ID array shuffled.");
-    console.log(cards);
   };
 
   return (
