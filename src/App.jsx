@@ -40,10 +40,10 @@ function App() {
   }, [score]);
 
   return (
-    <>
+    <div className="flex flex-col gap-8">
       <Display IDs={pokeArr} clickHandle={clickHandler}></Display>
       <Scoreboard score={score} bestScore={bestScore}></Scoreboard>
-    </>
+    </div>
   );
 }
 
