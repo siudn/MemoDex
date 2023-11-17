@@ -11,7 +11,7 @@ function PlaySound() {
 
   return (
     <>
-      <ReactHowler src={ecruteak} volume={0.5} loop playing={playing} />
+      <ReactHowler src={ecruteak} volume={0.4} loop playing={playing} />
       <img
         onClick={() => {
           const play = !playing;
