@@ -2,9 +2,11 @@ import { useState } from "react";
 import "./App.css";
 import Display from "./components/Display";
 import { shuffle, idGen } from "./components/Random";
+import Scoreboard from "./components/Scoreboard";
 
 function App() {
   const [score, setScore] = useState(0);
+  const [bestScore, setBestScore] = useState(0);
   const [pokeArr, setPokeArr] = useState(idGen());
   const [clickedCards, setClickedCards] = useState([]);
 
@@ -13,6 +15,7 @@ function App() {
   };
 
   const resetScore = () => {
+    setBestScore(score);
     setScore(0);
   };
 
@@ -35,7 +38,7 @@ function App() {
   return (
     <>
       <Display IDs={pokeArr} clickHandle={clickHandler}></Display>
-      <p>{score}</p>
+      <Scoreboard score={score} bestScore={bestScore}></Scoreboard>
     </>
   );
 }
