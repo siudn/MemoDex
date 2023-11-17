@@ -1,32 +1,27 @@
 import { useState } from "react";
-import useSound from "use-sound";
+import ecruteak from "../assets/ecruteak.mp3";
+import ReactHowler from "react-howler";
+import soundOn from "../assets/soundOn.png";
+import soundOff from "../assets/soundOff.png";
 
 function PlaySound() {
   const [playing, setPlaying] = useState(true);
 
-  const soundUrl = "../assets/ecruteak.mp3";
-
-  const [play, { stop }] = useSound(soundUrl, { volume: 0.5 });
-
-  const clickHandler = (play) => {
-    if (play) {
-      setPlaying(false);
-      stop();
-    } else {
-      setPlaying(true);
-      play();
-    }
-  };
+  const imgName = playing ? soundOn : soundOff;
 
   return (
-    <div>
-      {() => {
-        return playing ? (
-          <img src="../assets/soundOn.png" onClick={clickHandler(playing)} />
-        ) : (
-          <img src="../assets/soundOff.png" onClick={clickHandler(playing)} />
-        );
-      }}
-    </div>
+    <>
+      <ReactHowler src={ecruteak} volume={0.5} loop playing={playing} />
+      <button
+        onClick={() => {
+          const play = !playing;
+          setPlaying(play);
+        }}
+      >
+        <img src={imgName}></img>
+      </button>
+    </>
   );
 }
+
+export default PlaySound;
