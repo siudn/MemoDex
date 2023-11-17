@@ -8,13 +8,23 @@ function App() {
   const [pokeArr, setPokeArr] = useState(idGen());
   const [clickedCards, setClickedCards] = useState([]);
 
+  const handleIncreaseScore = () => {
+    setScore((prevScore) => prevScore + 1);
+  };
+
+  const resetScore = () => {
+    setScore(0);
+  };
+
   const clickHandler = (e) => {
     if (!clickedCards.includes(e.target)) {
       clickedCards.push(e.target);
       const shuffledIDs = [...pokeArr];
+      handleIncreaseScore();
       const newArr = shuffle(shuffledIDs);
       setPokeArr(newArr);
     } else {
+      resetScore();
       setPokeArr(idGen());
     }
 
@@ -25,6 +35,7 @@ function App() {
   return (
     <>
       <Display IDs={pokeArr} clickHandle={clickHandler}></Display>
+      <p>{score}</p>
     </>
   );
 }
