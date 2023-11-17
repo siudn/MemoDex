@@ -1,25 +1,25 @@
 import { useState } from "react";
 import "./App.css";
 import Display from "./components/Display";
-import { shuffle, getRandomInt } from "./components/Random";
+import { shuffle, idGen } from "./components/Random";
 
 function App() {
   const [score, setScore] = useState(0);
-  const [pokeArr, setPokeArr] = useState([]);
+  const [pokeArr, setPokeArr] = useState(idGen());
   const [clickedCards, setClickedCards] = useState([]);
 
-  while (pokeArr.length < 10) {
-    let newID = getRandomInt(1, 500);
-    if (!pokeArr.includes(newID)) {
-      pokeArr.push(newID);
-    }
-  }
-
   const clickHandler = (e) => {
-    clickedCards.push(e.target);
-    const shuffledIDs = [...pokeArr];
-    const newArr = shuffle(shuffledIDs);
-    setPokeArr(newArr);
+    if (!clickedCards.includes(e.target)) {
+      clickedCards.push(e.target);
+      const shuffledIDs = [...pokeArr];
+      const newArr = shuffle(shuffledIDs);
+      setPokeArr(newArr);
+    } else {
+      setPokeArr(idGen());
+    }
+
+    console.log(pokeArr);
+    console.log(clickedCards);
   };
 
   return (

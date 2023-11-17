@@ -20,3 +20,16 @@ export function getRandomInt(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
+export function idGen() {
+  const arr = [];
+
+  while (arr.length < 10) {
+    let newID = getRandomInt(1, 500);
+    if (!arr.includes(newID)) {
+      arr.push(newID);
+    }
+  }
+
+  return arr;
+}
