@@ -5,8 +5,8 @@ import Display from "./components/Display";
 
 function App() {
   const [score, setScore] = useState(0);
-  let pokeArr = [];
-  let cards = [];
+  const [pokeArr, setPokeArr] = useState([]);
+  const [cards, setCards] = useState([]);
   let clickedCards = [];
 
   const shuffle = (arr) => {
@@ -22,18 +22,40 @@ function App() {
         arr[currentIndex],
       ];
     }
+
+    return arr;
   };
+
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+
+  while (pokeArr.length < 10) {
+    let newID = getRandomInt(1, 500);
+    if (!pokeArr.includes(newID)) {
+      pokeArr.push(newID);
+    }
+  }
 
   const clickHandler = (e) => {
     console.log("clicked!");
     clickedCards.push(e.target);
-    shuffle(cards);
+    const newArr = shuffle(pokeArr);
+    setPokeArr(newArr);
+    console.log(pokeArr);
+    console.log("ID array shuffled.");
     console.log(cards);
   };
 
   return (
     <>
-      <Display IDs={pokeArr} cards={cards} clickHandle={clickHandler}></Display>
+      <Display
+        IDs={pokeArr}
+        clickHandle={clickHandler}
+        setCards={setCards}
+      ></Display>
       {console.log(cards)}
     </>
   );

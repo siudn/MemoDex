@@ -1,6 +1,26 @@
+import { useEffect, useState } from "react";
 import Card from "./Card";
 
-function Display({ clickHandle, IDs, cards }) {
+function Display({ cards, setPokeArr, setCards }) {
+  const [IDs, setIDs] = useState([]);
+
+  const shuffle = (arr) => {
+    let currentIndex = arr.length,
+      randomIndex;
+
+    while (currentIndex > 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      [arr[currentIndex], arr[randomIndex]] = [
+        arr[randomIndex],
+        arr[currentIndex],
+      ];
+    }
+
+    return arr;
+  };
+
   function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -14,11 +34,31 @@ function Display({ clickHandle, IDs, cards }) {
     }
   }
 
-  cards = IDs.map((x) => (
-    <Card key={x} name={x} handleClick={clickHandle}></Card>
-  ));
+  const clickHandler = (e) => {
+    console.log("clicked!");
+    const shuffledIDs = [...IDs];
+    const newArr = shuffle(shuffledIDs);
+    setIDs(newArr);
+    console.log(IDs);
+    console.log("ID array shuffled.");
+  };
 
-  return <>{cards}</>;
+  useEffect(() => {
+    const newCards = IDs.map((x) => (
+      <Card key={x} name={x} handleClick={clickHandler}></Card>
+    ));
+    setCards(newCards);
+    console.log("Ran successfully!");
+  }, [IDs]);
+
+  return (
+    <>
+      {IDs.map((x) => (
+        <Card key={x} name={x} handleClick={clickHandler}></Card>
+      ))}
+      {console.log("Rendered.")}
+    </>
+  );
 }
 
 export default Display;
