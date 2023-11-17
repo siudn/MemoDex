@@ -3,6 +3,7 @@ import "./App.css";
 import Display from "./components/Display";
 import { shuffle, idGen } from "./components/Random";
 import Scoreboard from "./components/Scoreboard";
+import { Instruction } from "./components/Scoreboard";
 
 function App() {
   const [score, setScore] = useState(0);
@@ -34,13 +35,14 @@ function App() {
 
   useEffect(() => {
     if (score == 10) {
-      alert("You Win!");
       reset();
+      alert("You Win!");
     }
   }, [score]);
 
   return (
     <div className="flex flex-col gap-8">
+      <Instruction></Instruction>
       <Display IDs={pokeArr} clickHandle={clickHandler}></Display>
       <Scoreboard score={score} bestScore={bestScore}></Scoreboard>
     </div>

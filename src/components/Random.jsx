@@ -25,7 +25,7 @@ export function idGen() {
   const arr = [];
 
   while (arr.length < 10) {
-    let newID = getRandomInt(1, 500);
+    let newID = getRandomInt(1, 1000);
     if (!arr.includes(newID)) {
       arr.push(newID);
     }
