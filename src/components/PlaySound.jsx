@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ecruteak from "../assets/ecruteak.mp3";
+import driftveil from "../assets/driftveil.mp3";
 import ReactHowler from "react-howler";
 import soundOn from "../assets/soundOn.png";
 import soundOff from "../assets/soundOff.png";
@@ -11,7 +11,7 @@ function PlaySound() {
 
   return (
     <>
-      <ReactHowler src={ecruteak} volume={0.4} loop playing={playing} />
+      <ReactHowler src={driftveil} volume={0.4} loop playing={playing} />
       <img
         onClick={() => {
           const play = !playing;
