@@ -1,8 +1,28 @@
-# React + Vite
+# MemoDex
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Pokemon memory card game built in React, pulling data about 1000+ different Pokemon from the RESTful [PokeAPI](https://pokeapi.co/). Play the game (here)[https://memodex.vercel.app/].
+<br>
 
-Currently, two official plugins are available:
+## Screenshots
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[screenshot](./src/assets/screenshot.png)
+
+## Custom Setup 📝 (if you want to change things around)
+
+### 1. Clone the repository
+
+```bash
+git clone git@github.com:siudn/MemoDex.git
+cd MemoDex
+```
+
+### 2. Install dependencies and run
+
+```bash
+npm install
+npm run dev
+```
+
+## Going Forward
+
+I think the project turned out nicely and it was overall a great learning experience. Probably won't add anything in the future.
