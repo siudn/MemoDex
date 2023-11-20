@@ -1,4 +1,4 @@
-# MemoDex <img src="./public/pokeball.png" alt="pokeball" width="20" height="20">
+# <img src="./public/pokeball.png" alt="pokeball" width="20" height="20"> MemoDex <img src="./public/pokeball.png" alt="pokeball" width="20" height="20">
 
 Pokemon memory card game built in React, pulling data about 1000+ different Pokemon from the RESTful [PokeAPI](https://pokeapi.co/). Play the game [here](https://memodex.vercel.app/).
 <br>
