@@ -1,11 +1,11 @@
 # MemoDex
 
-Pokemon memory card game built in React, pulling data about 1000+ different Pokemon from the RESTful [PokeAPI](https://pokeapi.co/). Play the game (here)[https://memodex.vercel.app/].
+Pokemon memory card game built in React, pulling data about 1000+ different Pokemon from the RESTful [PokeAPI](https://pokeapi.co/). Play the game [here](https://memodex.vercel.app/).
 <br>
 
 ## Screenshots
 
-[screenshot](./src/assets/screenshot.png)
+![screenshot](./src/assets/screenshot.png?raw=true "screenshot")
 
 ## Custom Setup 📝 (if you want to change things around)
 
