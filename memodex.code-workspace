@@ -1,0 +1,29 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+      "source.addMissingImports": true
+    },
+    "prettier.tabWidth": 2,
+    "prettier.useTabs": false,
+    "prettier.singleQuote": true,
+    "prettier.semi": false,
+    "prettier.jsxSingleQuote": true,
+    "prettier.trailingComma": "none"
+  },
+  "extensions": {
+    "recommendations": [
+      "christian-kohler.path-intellisense",
+      "christian-kohler.npm-intellisense",
+      "dsznajder.es7-react-js-snippets",
+      "dbaeumer.vscode-eslint"
+    ]
+  }
+}
