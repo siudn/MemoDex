@@ -1,10 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import Display from './components/Display'
-import { shuffle, idGen } from './components/Random'
-import Scoreboard from './components/Scoreboard'
-import { Instruction } from './components/Scoreboard'
 import PlaySound from './components/PlaySound'
+import Scoreboard, { Instruction } from './components/Scoreboard'
+import { idGen, shuffle } from './lib/utils'
 
 function App() {
   const [score, setScore] = useState(0)
