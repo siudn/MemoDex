@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 function Card({ id, handleClick }) {
   const [pokemon, setPokemon] = useState({})
@@ -11,6 +11,7 @@ function Card({ id, handleClick }) {
         { mode: 'cors' }
       )
       const pokeData = await response.json()
+
       setPokemon(pokeData)
     } catch (error) {
       console.error('Error fetching Pokemon data:', error)
