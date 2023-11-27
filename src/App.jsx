@@ -43,9 +43,9 @@ function App() {
     <div /*className="h-full flex flex-col justify-center align-middle"*/>
       <PlaySound />
       <div className='flex flex-col gap-8'>
-        <Instruction></Instruction>
-        <Display IDs={pokeArr} clickHandle={clickHandler}></Display>
-        <Scoreboard score={score} bestScore={bestScore}></Scoreboard>
+        <Instruction />
+        <Display IDs={pokeArr} clickHandle={clickHandler} />
+        <Scoreboard score={score} bestScore={bestScore} />
       </div>
     </div>
   )
