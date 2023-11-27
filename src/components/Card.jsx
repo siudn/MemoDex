@@ -19,10 +19,6 @@ function Card({ id, handleClick }) {
     }
   }
 
-  function capitalizeFirst(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1)
-  }
-
   useEffect(() => {
     getData(id)
   }, [id])
@@ -36,7 +32,7 @@ function Card({ id, handleClick }) {
       onClick={handleClick}
       className='cursor-pointer flex flex-col content-center justify-items-center bg-black bg-opacity-60 rounded-2xl p-3'
     >
-      <p className='font-semibold text-2xl'>{capitalizeFirst(pokemon.name)}</p>
+      <p className='font-semibold text-2xl capitalize'>{pokemon.name}</p>
       {pokemon.sprites.front_default && (
         <img
           src={pokemon.sprites.front_default}
