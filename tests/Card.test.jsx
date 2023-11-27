@@ -16,4 +16,7 @@ test("Should display Pokemon's name and image", async () => {
   render(<Card id={EXAMPLE_POKE_ID} handleClick={() => {}} />)
 
   expect(await screen.findByText('voltorb')).toBeInTheDocument()
+  expect(
+    await screen.findByRole('img', { name: voltorb.name })
+  ).toBeInTheDocument()
 })
