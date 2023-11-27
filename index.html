@@ -1,21 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/pokeball.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Do you remember?</title>
-    <style>
-      body {
-        background-image: url("src/assets/bg-main.gif");
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: 100% 100%;
-      }
-    </style>
+    <style></style>
   </head>
-  <body>
-    <div id="root"></div>
+  <body
+    class="bg-main flex min-h-screen min-w-[320px] place-items-center bg-cover bg-fixed bg-center text-gray-200"
+  >
+    <div
+      class="mx-auto my-0 max-w-screen-xl text-center max-lg:p-2"
+      id="root"
+    ></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
