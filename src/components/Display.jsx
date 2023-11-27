@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import Card from './Card'
 
 function Display({ clickHandle, IDs }) {
@@ -8,6 +9,11 @@ function Display({ clickHandle, IDs }) {
       ))}
     </div>
   )
+}
+
+Display.propTypes = {
+  clickHandle: PropTypes.func.isRequired,
+  IDs: PropTypes.arrayOf(PropTypes.number).isRequired
 }
 
 export default Display

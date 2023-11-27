@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import { useEffect, useState } from 'react'
 
 function Card({ id, handleClick }) {
@@ -43,6 +44,11 @@ function Card({ id, handleClick }) {
       )}
     </div>
   )
+}
+
+Card.propTypes = {
+  id: PropTypes.number.isRequired,
+  handleClick: PropTypes.func.isRequired
 }
 
 export default Card
