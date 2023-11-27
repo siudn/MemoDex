@@ -1,19 +1,17 @@
-import PropTypes from 'prop-types'
+import { useContext } from 'react'
+import { Context } from '../context/ContextProvider'
 import Card from './Card'
 
-function Display({ clickHandle, IDs }) {
+function Display() {
+  const { pokeArr, clickHandler } = useContext(Context)
+
   return (
     <div className='grid grid-cols-5 gap-4'>
-      {IDs.map((x) => (
-        <Card key={x} id={x} handleClick={clickHandle}></Card>
+      {pokeArr.map((x) => (
+        <Card key={x} id={x} handleClick={clickHandler}></Card>
       ))}
     </div>
   )
-}
-
-Display.propTypes = {
-  clickHandle: PropTypes.func.isRequired,
-  IDs: PropTypes.arrayOf(PropTypes.number).isRequired
 }
 
 export default Display
