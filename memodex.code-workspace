@@ -10,13 +10,7 @@
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true,
       "source.addMissingImports": true
-    },
-    "prettier.tabWidth": 2,
-    "prettier.useTabs": false,
-    "prettier.singleQuote": true,
-    "prettier.semi": false,
-    "prettier.jsxSingleQuote": true,
-    "prettier.trailingComma": "none"
+    }
   },
   "extensions": {
     "recommendations": [
