@@ -42,7 +42,7 @@ function App() {
 
   return (
     <div /*className="h-full flex flex-col justify-center align-middle"*/>
-      <PlaySound></PlaySound>
+      <PlaySound />
       <div className='flex flex-col gap-8'>
         <Instruction></Instruction>
         <Display IDs={pokeArr} clickHandle={clickHandler}></Display>
