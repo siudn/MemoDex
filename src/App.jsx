@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Display from './components/Display'
 import PlaySound from './components/PlaySound'
 import Scoreboard, { Instruction } from './components/Scoreboard'
@@ -8,7 +8,7 @@ function App() {
   const [score, setScore] = useState(0)
   const [bestScore, setBestScore] = useState(0)
   const [pokeArr, setPokeArr] = useState(idGen())
-  const [clickedCards] = useState([])
+  const clickedCards = useRef([])
 
   const handleIncreaseScore = () => {
     setScore((prevScore) => prevScore + 1)
@@ -21,8 +21,8 @@ function App() {
   }
 
   const clickHandler = (e) => {
-    if (!clickedCards.includes(e.target)) {
-      clickedCards.push(e.target)
+    if (!clickedCards.current.includes(e.target)) {
+      clickedCards.current.push(e.target)
       handleIncreaseScore()
       const shuffledIDs = [...pokeArr]
       const newArr = shuffle(shuffledIDs)
