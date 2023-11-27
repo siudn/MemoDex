@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 
 function Scoreboard({ score, bestScore }) {
   return (
-    <div className='font-bold text-3xl bg-black bg-opacity-50 p-4 rounded-lg'>
+    <div className='rounded-lg bg-black bg-opacity-50 p-4 text-3xl font-bold'>
       <p>Current Score: {score}</p>
       <p>High Score: {bestScore}</p>
     </div>
@@ -11,7 +11,7 @@ function Scoreboard({ score, bestScore }) {
 
 export function Instruction() {
   return (
-    <div className='font-bold text-3xl bg-black bg-opacity-50 p-4 rounded-lg'>
+    <div className='rounded-lg bg-black bg-opacity-50 p-4 text-3xl font-bold'>
       <p>Don&apos;t click the same Pokémon twice!</p>
     </div>
   )

@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import './App.css'
 import Display from './components/Display'
 import PlaySound from './components/PlaySound'
 import Scoreboard, { Instruction } from './components/Scoreboard'

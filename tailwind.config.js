@@ -7,6 +7,9 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', ...defaultTheme.fontFamily.sans]
+      },
+      backgroundImage: {
+        main: "url('/bg-main.gif')"
       }
     }
   },
