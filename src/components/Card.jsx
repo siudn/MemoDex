@@ -32,7 +32,7 @@ function Card({ id, handleClick }) {
   return (
     <div
       onClick={handleClick}
-      className='cursor-pointer flex flex-col content-center justify-items-center bg-black bg-opacity-60 rounded-2xl p-3'
+      className='cursor-pointer max-w-[150px] flex flex-col content-center justify-items-center bg-black bg-opacity-60 rounded-2xl p-3'
     >
       <p className='font-semibold text-2xl capitalize'>{pokemon.name}</p>
       {pokemon.sprites.front_default && (
